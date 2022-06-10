@@ -3,7 +3,7 @@ const path = require("path");
 // Use the existing order data
 const orders = require(path.resolve("src/data/orders-data"));
 
-// Use this function to assigh ID's when necessary
+// Use this function to assign ID's when necessary
 const nextId = require("../utils/nextId");
 
 // TODO: Implement the /orders handlers needed to make the tests pass
@@ -27,7 +27,7 @@ function create(req, res, next) {
  const { data: { dishes } = {} } = req.body; 
  
  
-  const newdish = {
+  const newDish = {
     id: nextId(),
     deliverTo,
     mobileNumber,
@@ -43,8 +43,8 @@ function create(req, res, next) {
     message: `quantity = ${quantity}`,
   });
   }}
-  orders.push(newdish);
-  res.status(201).json({ data: newdish});
+  orders.push(newDish);
+  res.status(201).json({ data: newDish});
   } 
 
 
